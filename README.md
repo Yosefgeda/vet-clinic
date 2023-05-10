@@ -1,3 +1,5 @@
+![White Minimalist Profile LinkedIn Banner](https://github.com/Yosefgeda/vet-clinic/assets/100337086/1423226e-d639-457e-8a3c-c9ba8d9fe46b)
+
 # Vet Clinic
 
 ## Getting Started
