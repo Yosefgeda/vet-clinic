@@ -73,3 +73,37 @@ SELECT MAX(weight_kg) FROM animals;
 /* What is the average number of escape attempts per animal type of those born between 1990 and 2000? */
 
 SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth > '1990-01-01' AND date_of_birth < '2000-01-01';
+
+/* What animals belong to Melody Pond? */
+
+SELECT name FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 4;
+
+/* List of all animals that are pokemon (their type is Pokemon). */
+
+SELECT animals.name FROM animals JOIN species ON animals.species_id = species.id WHERE species.id = 1;
+
+/* List all owners and their animals, remember to include those that don't own any animal. */
+
+SELECT full_name, name FROM owners FULL JOIN animals ON  owners.id = animals.owners_id;
+
+/* How many animals are there per species? */
+
+SELECT COUNT(*) FROM animals JOIN species ON animals.species_id = species.id WHERE species.id = 1;
+SELECT COUNT(*) FROM animals JOIN species ON animals.species_id = species.id WHERE species.id = 2;
+
+/* List all Digimon owned by Jennifer Orwell. */
+
+SELECT animals.name FROM animals JOIN owners ON animals.owners_id = owners.id JOIN species ON animals.species_id = species.id WHERE species.id = 2 AND owners.id = 2;
+
+/* List all animals owned by Dean Winchester that haven't tried to escape. */
+
+SELECT animals.name FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 5 AND animals.escape_attempts = 0;
+
+/* Who owns the most animals? */
+
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 1;
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 2;
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 3;
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 4;
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 5;
+SELECT COUNT (*) FROM animals JOIN owners ON animals.owners_id = owners.id WHERE owners.id = 6;
