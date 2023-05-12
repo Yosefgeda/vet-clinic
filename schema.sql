@@ -57,3 +57,13 @@ CREATE TABLE specializations (
     FOREIGN KEY (vet_id) REFERENCES vets(id), 
     FOREIGN KEY (species_id) REFERENCES species(id)
 );
+
+/* Create a "join table" called visits */
+
+CREATE TABLE visits (
+    animals_id INTEGER,
+    vets_id INTEGER,
+    visit_date DATE,
+    FOREIGN KEY (animals_id) REFERENCES Aanimals(id), 
+    FOREIGN KEY (vets_id) REFERENCES vets(id)
+);

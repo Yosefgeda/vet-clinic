@@ -45,7 +45,7 @@ UPDATE animals SET owners_id = '5' WHERE name IN ('Angemon', 'Boarmon');
 INSERT INTO vets VALUES (1, 'William Tatcher', 45, '2000-04-23');
 INSERT INTO vets VALUES (2, 'Maisy Smith', 26, '2019-01-17');
 INSERT INTO vets VALUES (3, 'Stephanie Mendez', 64, '1981-05-04');
-INSERT INTO vets VALUES (4, 'Jack Harkness', 38, '2008-01-08');
+INSERT INTO vets VALUES (4, 'Jack Harkness', 38, '2008-06-08');
 
 /* Insert the following data for specialties */
 
@@ -64,15 +64,15 @@ INSERT INTO visits VALUES (3,2,'2020-03-08');
 INSERT INTO visits VALUES (3,2,'2020-05-14');
 INSERT INTO visits VALUES (4,3,'2021-05-04');
 INSERT INTO visits VALUES (5,4,'2021-02-24');
-INSERT INTO visits VALUES (6,2,'2019-12-21');
 INSERT INTO visits VALUES (6,1,'2020-08-10');
+INSERT INTO visits VALUES (6,2,'2019-12-21');
 INSERT INTO visits VALUES (6,2,'2021-04-29');
 INSERT INTO visits VALUES (7,3,'2019-09-29');
 INSERT INTO visits VALUES (8,4,'2020-10-03');
 INSERT INTO visits VALUES (8,4,'2020-11-04');
 INSERT INTO visits VALUES (9,2,'2019-01-24');
 INSERT INTO visits VALUES (9,2,'2019-05-15');
-INSERT INTO visits VALUES (9,2,'2020-01-27');
+INSERT INTO visits VALUES (9,2,'2020-02-27');
 INSERT INTO visits VALUES (9,2,'2020-08-03');
 INSERT INTO visits VALUES (10,3,'2020-05-24');
 INSERT INTO visits VALUES (10,1,'2021-01-11');

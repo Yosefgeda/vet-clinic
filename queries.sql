@@ -156,15 +156,11 @@ AND visits.visit_date < '2020-08-30';
 
 /* What animal has the most visits to vets? */
 
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 1;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 2;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 3;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 4;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 5;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 6;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 7;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 8;
-SELECT COUNT(*) FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id WHERE animals.id = 9;
+SELECT animals.name as Animals_Name, count(visits.visit_date) as counts
+FROM animals, visits
+WHERE animals.id = visits.animals_id
+GROUP BY Animals_name 
+ORDER BY counts desc limit 1;
 
 /* Details for most recent visit: */
 
@@ -175,7 +171,7 @@ ON animals.id = visits.animals_id
 JOIN vets 
 ON vets.id = visits.vets_id 
 WHERE  visits.visit_date = (
-    SELECT MIN(visit_date) 
+    SELECT MAX(visit_date) 
     FROM visits
 );
 
