@@ -162,6 +162,22 @@ WHERE animals.id = visits.animals_id
 GROUP BY Animals_name 
 ORDER BY counts desc limit 1;
 
+/* Who was Maisy Smith's first visit? */
+
+SELECT animals.name 
+FROM animals 
+JOIN visits 
+ON animals.id = visits.animals_id 
+JOIN vets 
+ON vets.id = visits.vets_id 
+WHERE vets.id = 2 
+AND visits.visit_date = (
+    SELECT MIN(visit_date) 
+    FROM visits 
+    WHERE vets_id = 2
+);
+
+
 /* Details for most recent visit: */
 
 SELECT animals.name,vets.name,visit_date 
@@ -177,8 +193,28 @@ WHERE  visits.visit_date = (
 
 /* How many visits were with a vet that did not specialize in that animal's species? */
 
-SELECT vets.name as Vet_Name, count(visits.visit_date) from vets, visits where vets.id = visits.vets_id and vets.id not in(select vets_id from specializations) group by Vet_Name;
+SELECT vets.name 
+as Vet_Name, count(visits.visit_date) 
+from vets, visits 
+where vets.id = visits.vets_id 
+and vets.id 
+not in(
+    select vets_id 
+    from specializations
+    ) 
+group by Vet_Name;
 
 /* What specialty should Maisy Smith consider getting */
 
-SELECT vets.name as Vet_Name, species.name as Species_Name, count(visits.visit_date) as visit_count from vets, visits, species, animals where  vets.name = 'Maisy Smith' and vets.id = visits.vets_id and species.id = animals.species_id and animals.id = visits.animals_id group by Vet_Name, Species_Name order by visit_count desc limit 1;
+SELECT vets.name 
+as Vet_Name, species.name 
+as Species_Name, count(visits.visit_date) 
+as visit_count 
+from vets, visits, species, animals 
+where  vets.name = 'Maisy Smith' 
+and vets.id = visits.vets_id 
+and species.id = animals.species_id 
+and animals.id = visits.animals_id 
+group by Vet_Name, Species_Name 
+order by visit_count 
+desc limit 1;
