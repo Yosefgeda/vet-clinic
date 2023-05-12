@@ -39,3 +39,21 @@ ALTER TABLE animals ADD COLUMN species_id INTEGER REFERENCES species(id);
 /* Add column owner_id which is a foreign key referencing the owners table */
 
 ALTER TABLE animals ADD COLUMN owners_id INTEGER REFERENCES owners(id);
+
+/* Create a table named vets with the following columns: */
+
+ CREATE TABLE vets (
+    id SERIAL PRIMARY KEY, 
+    name VARCHAR, 
+    age INTEGER, 
+    date_of_graduation DATE
+);
+
+/* Create a "join table" called specializations */
+
+CREATE TABLE specializations (
+    vet_id INTEGER, 
+    species_id INTEGER, 
+    FOREIGN KEY (vet_id) REFERENCES vets(id), 
+    FOREIGN KEY (species_id) REFERENCES species(id)
+);
