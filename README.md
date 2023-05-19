@@ -19,6 +19,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Schema diagram](#Schema-diagram)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -67,6 +68,13 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 - **[Table_contains_6_columns]**
 - **[Table_contains_data_for_four_animals]**
+- **[Schema_diagram]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Schema diagram -->
+
+## Schema diagram <a name="Schema-diagram" href="https://drawsql.app/teams/team-1-104/diagrams/vet-clinic">Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
